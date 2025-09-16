@@ -1,9 +1,7 @@
-# -------------------------------
-# Deshabilitar LLMNR
-# -------------------------------
-Write-Output "Deshabilitando LLMNR..."
-New-ItemProperty -Path "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" `
-    -Name "EnableMulticast" -PropertyType DWORD -Value 0 -Force
+
+# Deshabilitar LLMNR mediante el editor de registro de Windows:
+New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\DNSClient" -Name "EnableMulticast" -Value 0 -PropertyType DWORD -Force
+
 
 # -------------------------------
 # Deshabilitar NetBIOS (NBT-NS)
@@ -41,3 +39,4 @@ if (-not (Get-NetFirewallRule -DisplayName "Bloquear mDNS Entrada" -ErrorAction 
 
 # -------------------------------
 Write-Output "LLMNR deshabilitado, NetBIOS deshabilitado y mDNS bloqueado con firewall."
+
