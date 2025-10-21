@@ -31,7 +31,7 @@ Este Script deshabilita los cifrados inseguros basados en bloques de 64 bits usa
 
 ### `SMBServiceDisabled.ps1`
 
-Este Script deshabilita el servicio SMB de carpetas compartidas, para los casos en los que no se necesite utilizar y para evitar superficie de ataque innecesaria.
+Este Script crea una regla de Firewall que impide el acceso al servicio SMB, solo para los casos en los que dicho servicio no sea necesario
 
 ## Uso
 
